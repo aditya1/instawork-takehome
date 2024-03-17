@@ -49,3 +49,7 @@ truststore==0.8.0
 uritemplate==4.1.1
 urllib3_secure_extra==0.1.0
 xmlrpclib==1.0.1
+Django==5.0.3
+django-admin=2.0.2
+djangorestframework=3.15.0
+django-cors-headers=4.3.1
