@@ -1,15 +1,17 @@
 import React from 'react'
 import type { FC } from 'react'
 import { TeamMember } from '../../types'
-import { Flex, Avatar, Box, Text, Badge, border } from '@chakra-ui/react'
+import { Flex, Avatar, Box, Text, Badge, border, Button } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 
 export interface TeamMemberProps {
   member: TeamMember
 }
 export const TeamMemberUI: FC<TeamMemberProps> = (props: TeamMemberProps) => {
   const { member } = props
+
   return (
-    <Flex border={'1px'} padding={'10px'} width={'fit-content'} borderRadius={'4px'}>
+    <Flex padding={'10px'} width={'350px'}>
       <Avatar name={`${member.firstName} ${member.lastName}`} />
       <Box ml="3">
         <Text fontWeight="bold">

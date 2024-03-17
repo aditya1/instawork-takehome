@@ -9,7 +9,7 @@ export interface TeamMember {
 }
 
 export interface ListPageProps {
-  teamMembers: TeamMember[]
+  //teamMembers: TeamMember[]
   //onEditClick: (id: string) => void
   //onAddClick: () => void
 }
