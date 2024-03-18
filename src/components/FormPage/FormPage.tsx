@@ -1,5 +1,5 @@
 import React from 'react'
-import { AddEditPageProps, TeamMember } from '../../types'
+import { TeamMember } from '../../types'
 import { Form, Button } from '../styled'
 import {
   FormControl,
@@ -124,7 +124,6 @@ const FormPage: React.FC = () => {
         <Heading as="h4" size={'md'}>
           Role
         </Heading>
-        // Inside your component
         <FormControl isInvalid={!!errors.role}>
           <FormLabel htmlFor="role">Role</FormLabel>
           <Controller
