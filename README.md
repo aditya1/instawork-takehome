@@ -20,7 +20,7 @@ python manage.py runserver
 
 7. Once Django App is up and running, follow instructios for React App.
 
-# Getting Started React App
+# Starting React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
