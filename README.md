@@ -1,4 +1,26 @@
-# Getting Started with Create React App
+# Starting Python Django
+
+1. This repo contians the code for backend which was developed using Django and SQLLite which is default database for Django.
+2. To install dependencies required for this App, you will need Python 3.11 or later installed on your computer. Also, make sure you've **pip** installed.
+3. Create a virtual environemnt for the project. For e.g. you can use following commands
+
+```sh
+python3.11 -m venv myenv
+source myenv/bin/activate
+```
+
+4. Once virtual environment is created, run `pip install -r requirements.txt` at repo root level to install python dependencies.
+5. After Python dependencies are installed you start the server using following command. I've checked in migrations and sqlite DB file.
+
+```sh
+python manage.py runserver
+```
+
+6. After server is launched go to [Root API](http://127.0.0.1:8000/api/team-members/). Make sure server starts on **127.0.0.1:8000** this base url is hardcoded in react app.
+
+7. Once Django App is up and running, follow instructios for React App.
+
+# Getting Started React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -6,41 +28,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `yarn install`
+
+Install all dependencies from the project.
+
 ### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+In React webapp, you'll land on the List Team Members page. And then you can add or edit team-members from there on.
