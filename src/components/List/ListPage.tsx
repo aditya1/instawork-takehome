@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ListPageProps, TeamMember } from '../../types'
+import { TeamMember } from '../../types'
 import { TeamMemberUI } from '../TeamMember/TeamMember'
 import { Flex, List, Button, Heading, ListItem, Tooltip, Spacer } from '@chakra-ui/react'
 import { AddIcon } from '@chakra-ui/icons'
@@ -28,22 +28,26 @@ const ListPage: React.FC = () => {
   }
   return (
     <Flex padding={'24px'} flexDirection={'column'} maxWidth={'600px'}>
-      <Heading>
-        Team Members
-        <Heading as="h5" size="sm">
-          You have {teamMembers.length} team members
+      <Flex flexDirection={'row'}>
+        <Heading alignSelf={'flex-start'} gap={'24px'}>
+          Team Members
+          <Heading color={'GrayText'} size="md">
+            You have {teamMembers.length} team members
+          </Heading>
         </Heading>
-      </Heading>
-      <Tooltip label="Add new team member">
-        <Button
-          alignSelf={'flex-end'}
-          onClick={() => {
-            onAddClick()
-          }}
-        >
-          {<AddIcon></AddIcon>}
-        </Button>
-      </Tooltip>
+        <Spacer></Spacer>
+        <Tooltip label="Add new team member">
+          <Button
+            alignSelf={'flex-end'}
+            colorScheme={'blue'}
+            onClick={() => {
+              onAddClick()
+            }}
+          >
+            {<AddIcon></AddIcon>}
+          </Button>
+        </Tooltip>
+      </Flex>
       <List padding={'24px'}>
         {teamMembers.map((member) => (
           <ListItem cursor="pointer" key={member.id} onClick={() => onEditClick(member)}>

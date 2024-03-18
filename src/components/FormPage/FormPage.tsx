@@ -1,6 +1,6 @@
 import React from 'react'
 import { TeamMember } from '../../types'
-import { Form, Button } from '../styled'
+import { Form } from '../styled'
 import {
   FormControl,
   Input,
@@ -13,6 +13,8 @@ import {
   RadioGroup,
   Heading,
   FormErrorMessage,
+  Button,
+  Tooltip,
 } from '@chakra-ui/react'
 import { PhoneIcon } from '@chakra-ui/icons'
 import { useNavigate, useLocation } from 'react-router-dom'
@@ -69,13 +71,27 @@ const FormPage: React.FC = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <Flex gap={'16px'} width={'450px'} direction={'column'} maxWidth={'720px'} padding={'30px'}>
-        <Heading as="h1" size="lg">
-          {getHeading()}
-          <Heading size="sm" color={'gray'}>
-            {getSubHeading()}
+      <Flex gap={'16px'} width={'550px'} direction={'column'} maxWidth={'720px'} padding={'30px'}>
+        <Flex flexDirection={'row'}>
+          <Heading alignSelf={'flex-start'} as="h1" size="lg">
+            {getHeading()}
+            <Heading size="sm" color={'gray'}>
+              {getSubHeading()}
+            </Heading>
           </Heading>
-        </Heading>
+          <Spacer></Spacer>
+          <Button
+            alignSelf="flex-end"
+            colorScheme={'blue'}
+            variant={'outline'}
+            type="button"
+            onClick={() => {
+              navigate('/')
+            }}
+          >
+            Members List
+          </Button>
+        </Flex>
         <FormControl isInvalid={!!errors.firstName}>
           <FormLabel>First name</FormLabel>
           <Input placeholder="First Name" {...register('firstName', { required: true })} />
@@ -140,15 +156,19 @@ const FormPage: React.FC = () => {
           />
           {errors.role && <FormErrorMessage>This field is required</FormErrorMessage>}
         </FormControl>
-        <Flex direction="row" justifyContent="flex-end">
-          <Button name="save" type="submit">
-            Save
-          </Button>
+        <Flex gap={'24px'} direction="row" justifyContent="flex-end">
           {pageType === 'edit' && (
-            <Button type="button" name="delete" onClick={() => onDelete()}>
-              Delete
-            </Button>
+            <Tooltip label="Delete Member">
+              <Button colorScheme={'red'} variant={'outline'} type="button" name="delete" onClick={() => onDelete()}>
+                Delete
+              </Button>
+            </Tooltip>
           )}
+          <Tooltip label="Save changes">
+            <Button colorScheme={'blue'} name="save" type="submit">
+              Save
+            </Button>
+          </Tooltip>
         </Flex>
       </Flex>
     </Form>
